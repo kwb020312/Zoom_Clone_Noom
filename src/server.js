@@ -23,7 +23,6 @@ const sockets = [];
 
 wss.on("connection", (socket) => {
   sockets.push(socket);
-  socket.send("hello!!!");
   console.log("Connected to Server!");
   socket.on("message", (message) => {
     sockets.forEach((aSocket) => aSocket.send(message.toString()));
